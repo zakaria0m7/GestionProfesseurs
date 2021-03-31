@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% block title %}{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/acceuil.css"/>
+{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav m-auto text-center">
+            <li class="nav-item active ">
+                <a class="nav-link" href="{{ path('home') }}">Acceuil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('professeur_index') }}">Professeur</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('cours_index') }}">Cours</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ path('departement_index') }}">Departement</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" tp-type="username">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" tp-type="button">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+<div class style="background-color: mistyrose" >
+{% block body %}
+
+{% endblock %}
+</div>
+</div>
+{% block javascripts %}
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</body>
+</html>

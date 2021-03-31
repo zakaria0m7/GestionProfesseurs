@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+<div class="container">
+    <br><h1 align="center" class="font-weight-normal" >Professeur index</h1><br>
+
+    <table class="text-primary" align="center" bgcolor="#b0e0e6" cellspacing="5" cellpadding="5"  border="2">
+        <thead>
+            <tr align="center">
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Cin</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Adresse</th>
+                <th>Date_recrutement</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for professeur in professeurs %}
+            <tr align="center">
+                <td>{{ professeur.id }}</td>
+                <td>{{ professeur.nom }}</td>
+                <td>{{ professeur.prenom }}</td>
+                <td>{{ professeur.cin }}</td>
+                <td>{{ professeur.email }}</td>
+                <td>{{ professeur.telephone }}</td>
+                <td>{{ professeur.adresse }}</td>
+                <td>{{ professeur.dateRecrutement ? professeur.dateRecrutement|date('Y-m-d') : '' }}</td>
+                <td align="center">
+                    <a href="{{ path('professeur_show', {'id': professeur.id}) }}"><span class="badge badge-pill badge-info">Show</span></a>
+                    <a href="{{ path('professeur_edit', {'id': professeur.id}) }}"><span class="badge badge-pill badge-success">Edit</span></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr align="center">
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   <br><center><a href="{{ path('professeur_new') }}"><button type="button" class="btn btn-primary">Create New</button></a></center><br>
+</div>
+{% endblock %}

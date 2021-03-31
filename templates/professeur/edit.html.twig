@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <br><h1 align="center" class="font-weight-normal" >Edit Professeur</h1><br>
+    {{ include('professeur/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <table align="center">
+        <tr align="center">
+            <td>{{ include('professeur/_delete_form.html.twig') }}</td>
+            <td><a href="{{ path('professeur_index') }}"><button type="button" class="btn btn-danger">back to list</button></a></td>
+        </tr>
+    </table>
+
+
+{% endblock %}

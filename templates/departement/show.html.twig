@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <br><h1 align="center" class="font-weight-normal" >Departement</h1><br>
+    <table class="text-primary" align="center" bgcolor="#b0e0e6" cellspacing="5" cellpadding="5"  border="2">
+        <tbody>
+            <tr align="center">
+                <th>Id</th>
+                <td>{{ departement.id }}</td>
+            </tr>
+            <tr align="center">
+                <th>NomDepart</th>
+                <td>{{ departement.nomDepart }}</td>
+            </tr>
+            <tr>
+                <th>Liste Prof</th>
+                <td>
+                    <div class="form-group">
+                        <select class="custom-select">
+                            <option selected="">Voir plus</option>
+                            {% for prof in departement.professeur %}
+                                <option >{{ prof.nom }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><center><a href="{{ path('departement_edit', {'id': departement.id}) }}"><button type="button" class="btn btn-success">Edit</button></a></center></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table align="center">
+        <tr align="center">
+            <td>{{ include('departement/_delete_form.html.twig') }}</td>
+            <td><a href="{{ path('professeur_index') }}"><button type="button" class="btn btn-danger">back to list</button></a></td>
+        </tr>
+    </table>
+
+{% endblock %}

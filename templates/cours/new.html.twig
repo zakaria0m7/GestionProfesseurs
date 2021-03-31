@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cours{% endblock %}
+
+{% block body %}
+    <br><br><h1 align="center">Create new Cours</h1>
+
+    {{ include('cours/_form.html.twig') }}
+
+    <br> <center><a href="{{ path('cours_index') }}"><button type="button" class="btn btn-danger">back to list</button></a></center><br>
+{% endblock %}

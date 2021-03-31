@@ -1,0 +1,20 @@
+{{ form_start(form) }}
+<div class= bg-dark>
+    <form>
+        <fieldset>
+            <table width="40%" align="center">
+                <tr >
+                 <td class="text-light" align="center">Intitule </td>
+                    <td>
+                        <label class="col-form-label" for="inputDefault">
+                            {{ form_widget(form.intitule, {'id':"inputDefault",'attr': {'class': 'form-control','placeholder':'votre intitule ici'}}) }}
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <br><center><button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button></center><br>
+        {{ form_rest(form) }}
+    </form>
+</div>
+{{ form_end(form) }}

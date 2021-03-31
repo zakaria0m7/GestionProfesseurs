@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+<div class="container">
+    <br><h1 align="center" class="font-weight-normal" >Departement index</h1><br>
+
+    <table class="text-primary" align="center" bgcolor="#b0e0e6" cellspacing="5" cellpadding="5"  border="2">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomDepart</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departement in departements %}
+            <tr align="center">
+                <td>{{ departement.id }}</td>
+                <td>{{ departement.nomDepart }}</td>
+                <td>
+                    <a href="{{ path('departement_show', {'id': departement.id}) }}"><span class="badge badge-pill badge-info">Show</span></a>
+                    <a href="{{ path('departement_edit', {'id': departement.id}) }}"><span class="badge badge-pill badge-success">Edit</span></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <br><center><a href="{{ path('departement_new') }}"><button type="button" class="btn btn-primary">Create New</button></a></center><br>
+
+</div>
+{% endblock %}

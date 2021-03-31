@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <br><h1 align="center" class="font-weight-normal" >Edit Departement</h1><br>
+
+    {{ include('departement/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <table align="center">
+        <tr align="center">
+            <td>{{ include('departement/_delete_form.html.twig') }}</td>
+            <td><a href="{{ path('departement_index') }}"><button type="button" class="btn btn-danger">back to list</button></a></td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professeur{% endblock %}
+
+{% block body %}
+    <br><h1 align="center" class="font-weight-normal" >Professeur</h1><br>
+    <table class="text-primary" align="center" bgcolor="#b0e0e6" cellspacing="5" cellpadding="5"  border="2">
+        <tbody>
+            <tr align="center">
+                <th>Id</th>
+                <td>{{ professeur.id }}</td>
+            </tr>
+            <tr align="center">
+                <th>Adresse</th>
+                <td>{{ professeur.adresse }}</td>
+            </tr>
+            <tr align="center">
+                <th>Cin</th>
+                <td>{{ professeur.cin }}</td>
+            </tr>
+            <tr align="center">
+                <th>Date_recrutement</th>
+                <td>{{ professeur.dateRecrutement ? professeur.dateRecrutement|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr align="center">
+                <th>Email</th>
+                <td>{{ professeur.email }}</td>
+            </tr>
+            <tr align="center">
+                <th>Nom</th>
+                <td>{{ professeur.nom }}</td>
+            </tr>
+            <tr align="center">
+                <th>Prenom</th>
+                <td>{{ professeur.prenom }}</td>
+            </tr>
+            <tr align="center">
+                <th>Telephone</th>
+                <td>{{ professeur.telephone }}</td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><center><a href="{{ path('professeur_edit', {'id': professeur.id}) }}"><button type="button" class="btn btn-success">edit</button></a></center></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table align="center">
+        <tr align="center">
+            <td>{{ include('professeur/_delete_form.html.twig') }}</td>
+             <td><a href="{{ path('professeur_index') }}"><button type="button" class="btn btn-danger">back to list</button></a></td>
+        </tr>
+    </table>
+
+{% endblock %}

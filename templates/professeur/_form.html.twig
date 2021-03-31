@@ -1,0 +1,112 @@
+
+{{ form_start(form) }}
+<div class="bg-dark">
+<form>
+    <fieldset>
+        <br>
+        <table width="40%" align="center"  style="background-color: #1a1a1a" cellpadding="5">
+        <tr align="center">
+                <td class="text-light" >NOM </td>
+                <td colspan="3" >
+                    <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.nom, {'id':"inputDefault",'attr': {'class': 'form-control','placeholder':'votre Nom ici'}}) }}
+                    </label>
+                </td>
+        </tr>
+        <tr align="center">
+            <td class="text-light" >PRENOM </td>
+            <td colspan="3" >
+                <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.prenom, {'id':"inputDefault",'attr': {'class': 'form-control','placeholder':'votre Prenom ici'}}) }}
+                </label>
+            </td>
+
+        </tr>
+        <tr align="center">
+            <td class="text-light" >CIN</td>
+            <td colspan="3" >
+                <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.cin, {'id':"inputDefault",'attr': {'class': 'form-control','placeholder':'votre Cin ici'}}) }}
+                </label>
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td class="text-light" >ADRESSE</td>
+            <td colspan="3" >
+                <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.adresse, {'id':"inputDefault",'attr': {'class': 'form-control','placeholder':'votre Adresse ici'}}) }}
+                </label>
+            </td>
+        </tr>
+
+
+        <tr align="center">
+            <td class="text-light" >TELPHONE </td>
+            <td colspan="3" >
+                <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.telephone, {'id':"inputDefault",'attr': {'class': 'form-control','placeholder':'Ex:0692754675'}}) }}
+                </label>
+            </td>
+        </tr>
+
+
+        <tr align="center">
+            <td class="text-light">EMAIL </td>
+            <td colspan="3" >
+                <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.email, {'id':"inputDefault",'attr': {'class': 'form-control','placeholder':'Ex:Nom@gmail.com'}}) }}
+                </label>
+            </td>
+        </tr>
+
+
+        <tr align="center">
+            <td class="text-light" align="center">DATE RECRUTEMENT   </td>
+            <td colspan="3" align="center">
+                <label for="date">
+                    {{ form_widget(form.date_recrutement) }}
+                </label>
+            </td>
+        </tr>
+
+        <tr align="center">
+            <td class="text-light" align="center">DEPARTEMENT</td>
+            <td>
+                <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.departement, {'id':"inputDefault",'attr': {'class': 'col-form-label'}}) }}
+                </label>
+            </td>
+            <td class="text-light"> Or </td>
+            <td>
+                <a href="{{ path('departement_new') }}"><span class="badge badge-info">Ajouter un nouveau Departement</span></a>
+            </td>
+        </tr>
+
+
+        <tr align="center">
+            <td class="text-light" align="center">COURS</td>
+            <td>
+                <label class="col-form-label" for="inputDefault">
+                    {{ form_widget(form.cours, {'id':"inputDefault",'attr': {'class': 'col-form-label'}}) }}
+                </label>
+            </td>
+            <td class="text-light"> Or </td>
+            <td>
+                <a href="{{ path('cours_new') }}"><span class="badge badge-info">Ajouter un nouveau Cours</span></a>
+            </td>
+        </tr>
+
+</table>
+        <br><center><button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button></center><br>
+
+</fieldset>
+    {{ form_rest(form) }}
+</form>
+</div>
+{{ form_end(form) }}
+
+
+
+
+
